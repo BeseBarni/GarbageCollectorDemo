@@ -19,7 +19,7 @@ namespace GarbageCollectorDemo
         ~InstanceCounter()
         {
             objectCount--;
-            Console.WriteLine("Object destroyed, Count: {0}",objectCount);
+            ConsoleHelper.WriteErrorLine("Object destroyed, Count: " + objectCount);
         }
     }
 }

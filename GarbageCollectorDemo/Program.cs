@@ -13,14 +13,13 @@ namespace GarbageCollectorDemo
             TaskFactory f = new TaskFactory();
             f.StartNew(() =>
             {
-                List<InstanceCounter> list = new List<InstanceCounter>();
                 bool stackOverflow = false;
                 while (!stackOverflow)
                 {
                     try
                     {
                         Console.Write("Thread: 1 ");
-                        list.Add(new InstanceCounter());
+                        var temp = new InstanceCounter();
                     }
                     catch (Exception e)
                     {
@@ -32,14 +31,13 @@ namespace GarbageCollectorDemo
             });
             f.StartNew(() =>
             {
-                List<InstanceCounter> list = new List<InstanceCounter>();
                 bool stackOverflow = false;
                 while (!stackOverflow)
                 {
                     try
                     {
                         Console.Write("Thread: 2 ");
-                        list.Add(new InstanceCounter());
+                        var temp = new InstanceCounter();
                     }
                     catch (Exception e)
                     {
